@@ -45,3 +45,53 @@
       linear-gradient(90deg, rgba(8,8,6,.985) 0%, rgba(8,8,6,.8) 54%, rgba(8,8,6,.4) 83%, rgba(8,8,6,.18) 100%);
   }
 }
+
+/*
+ * 320px-class phones: keep the hero editorial, but remove the two pressure points
+ * visible at this width — an over-tight headline and an over-right-biased crop.
+ */
+@media (max-width: 340px) {
+  .hero-photo-layer {
+    opacity: .36;
+  }
+
+  .hero-photo-layer img {
+    /* Wider field of view + slightly less right bias keeps the focal subject in frame. */
+    object-position: 70% 29%;
+    transform: scale(1);
+    filter: saturate(.67) contrast(1.17) brightness(.51);
+  }
+
+  .hero-with-photo .hero-main {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-with-photo .hero-copy h1 {
+    /* 3.6rem keeps “Aperitivo.” inside the ~283px usable width at 320px. */
+    font-size: 3.6rem;
+    line-height: .86;
+    letter-spacing: -.05em;
+  }
+
+  .hero-with-photo .hero-copy .accent-word {
+    transform: translateX(.08em);
+  }
+
+  .hero-with-photo .hero-intro {
+    margin-top: 1.25rem;
+    margin-left: .2rem;
+    line-height: 1.45;
+  }
+
+  .hero-with-photo .hero-actions {
+    margin-top: 1.25rem;
+    margin-left: .2rem;
+    gap: .85rem;
+  }
+
+  .hero-with-photo .hero-actions .button {
+    min-width: 154px;
+    padding: .85rem .9rem;
+  }
+}
