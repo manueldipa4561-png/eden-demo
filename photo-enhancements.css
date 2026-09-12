@@ -11,29 +11,55 @@
   pointer-events: none;
 }
 
+/*
+ * HERO PHOTO TREATMENT
+ * The image remains visible and atmospheric, but the focal point is deliberately
+ * pushed away from the headline. The layered shade creates a protected reading
+ * zone on the left rather than simply making the entire image darker.
+ */
 .hero-photo-layer {
   z-index: -4;
-  opacity: .34;
+  opacity: .42;
+  overflow: hidden;
 }
 
 .hero-photo-layer img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 65% center;
-  filter: saturate(.72) contrast(1.08) brightness(.64);
-  transform: scale(1.03);
+  object-position: 72% 46%;
+  filter: saturate(.74) contrast(1.16) brightness(.57);
+  transform: scale(1.045);
 }
 
 .hero-photo-shade {
   z-index: -3;
   background:
-    linear-gradient(90deg, rgba(8,8,6,.98) 0%, rgba(8,8,6,.94) 31%, rgba(8,8,6,.67) 58%, rgba(8,8,6,.28) 100%),
-    linear-gradient(0deg, rgba(8,8,6,.96) 0%, transparent 42%, rgba(8,8,6,.42) 100%);
+    radial-gradient(ellipse at 22% 48%, rgba(8,8,6,.62) 0%, rgba(8,8,6,.34) 34%, transparent 61%),
+    linear-gradient(90deg, rgba(8,8,6,.995) 0%, rgba(8,8,6,.97) 27%, rgba(8,8,6,.84) 48%, rgba(8,8,6,.48) 72%, rgba(8,8,6,.24) 100%),
+    linear-gradient(180deg, rgba(8,8,6,.58) 0%, rgba(8,8,6,.12) 34%, rgba(8,8,6,.24) 66%, rgba(8,8,6,.94) 100%);
 }
 
 .hero-with-photo::before {
   z-index: -2;
+}
+
+.hero-with-photo .hero-copy {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-with-photo .hero-copy h1 {
+  text-shadow:
+    0 2px 2px rgba(0,0,0,.2),
+    0 12px 42px rgba(0,0,0,.55);
+}
+
+.hero-with-photo .hero-intro,
+.hero-with-photo .hero-actions,
+.hero-with-photo .hero-eyebrow,
+.hero-with-photo .hero-footer {
+  text-shadow: 0 4px 22px rgba(0,0,0,.72);
 }
 
 .hero-photo-card {
@@ -79,6 +105,10 @@
   object-fit: cover;
   filter: saturate(.8) contrast(1.08) brightness(.84);
   transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+
+.photo-frame img {
+  object-position: 62% 48%;
 }
 
 .hero-photo-card:hover .photo-frame img,
@@ -307,6 +337,10 @@
     grid-template-columns: 1.05fr .95fr;
   }
 
+  .hero-photo-layer img {
+    object-position: 68% 46%;
+  }
+
   .hero-photo-card {
     height: min(58vh, 590px);
     min-height: 420px;
@@ -323,17 +357,30 @@
   }
 
   .hero-photo-layer {
-    opacity: .3;
+    opacity: .37;
   }
 
   .hero-photo-layer img {
-    object-position: 58% center;
+    object-position: 66% 38%;
+    filter: saturate(.68) contrast(1.18) brightness(.52);
+    transform: scale(1.07);
   }
 
   .hero-photo-shade {
     background:
-      linear-gradient(180deg, rgba(8,8,6,.88) 0%, rgba(8,8,6,.72) 35%, rgba(8,8,6,.92) 82%, #080806 100%),
-      linear-gradient(90deg, rgba(8,8,6,.78), rgba(8,8,6,.24));
+      radial-gradient(ellipse at 30% 28%, rgba(8,8,6,.68) 0%, rgba(8,8,6,.36) 38%, transparent 66%),
+      linear-gradient(180deg, rgba(8,8,6,.95) 0%, rgba(8,8,6,.82) 28%, rgba(8,8,6,.66) 50%, rgba(8,8,6,.9) 80%, #080806 100%),
+      linear-gradient(90deg, rgba(8,8,6,.9) 0%, rgba(8,8,6,.58) 58%, rgba(8,8,6,.3) 100%);
+  }
+
+  .hero-with-photo .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-with-photo .hero-copy h1 {
+    text-shadow:
+      0 2px 2px rgba(0,0,0,.28),
+      0 10px 34px rgba(0,0,0,.78);
   }
 
   .hero-main {
@@ -350,6 +397,10 @@
 
   .photo-frame {
     border-radius: 44% 44% 1rem 1rem / 15% 15% 1rem 1rem;
+  }
+
+  .photo-frame img {
+    object-position: 60% 45%;
   }
 
   .editorial-band-photo {
@@ -398,11 +449,43 @@
 }
 
 @media (max-width: 560px) {
+  .hero-photo-layer {
+    opacity: .33;
+  }
+
+  .hero-photo-layer img {
+    object-position: 61% 32%;
+    filter: saturate(.64) contrast(1.2) brightness(.48);
+    transform: scale(1.09);
+  }
+
+  .hero-photo-shade {
+    background:
+      radial-gradient(ellipse at 24% 27%, rgba(8,8,6,.82) 0%, rgba(8,8,6,.48) 42%, transparent 70%),
+      linear-gradient(180deg, rgba(8,8,6,.98) 0%, rgba(8,8,6,.9) 25%, rgba(8,8,6,.74) 48%, rgba(8,8,6,.92) 74%, #080806 100%),
+      linear-gradient(90deg, rgba(8,8,6,.96) 0%, rgba(8,8,6,.72) 67%, rgba(8,8,6,.38) 100%);
+  }
+
+  .hero-with-photo .hero-copy h1 {
+    text-shadow:
+      0 2px 1px rgba(0,0,0,.35),
+      0 8px 26px rgba(0,0,0,.9);
+  }
+
+  .hero-with-photo .hero-intro {
+    color: #eee7d9;
+    max-width: 31rem;
+  }
+
   .hero-photo-card {
     width: 100%;
     height: 54svh;
     min-height: 390px;
     padding: .75rem;
+  }
+
+  .photo-frame img {
+    object-position: 58% 42%;
   }
 
   .photo-card-meta {
