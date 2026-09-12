@@ -52,14 +52,22 @@
  */
 @media (max-width: 340px) {
   .hero-photo-layer {
-    opacity: .36;
+    opacity: .39;
   }
 
   .hero-photo-layer img {
     /* Wider field of view + slightly less right bias keeps the focal subject in frame. */
     object-position: 70% 29%;
     transform: scale(1);
-    filter: saturate(.67) contrast(1.17) brightness(.51);
+    filter: saturate(.68) contrast(1.16) brightness(.54);
+  }
+
+  .hero-photo-shade {
+    /* Preserve a dark reading zone at left, but let the subject breathe on the right. */
+    background:
+      radial-gradient(ellipse at 18% 27%, rgba(8,8,6,.92) 0%, rgba(8,8,6,.61) 40%, transparent 70%),
+      linear-gradient(180deg, rgba(8,8,6,.98) 0%, rgba(8,8,6,.89) 25%, rgba(8,8,6,.68) 49%, rgba(8,8,6,.88) 76%, #080806 100%),
+      linear-gradient(90deg, rgba(8,8,6,.985) 0%, rgba(8,8,6,.81) 56%, rgba(8,8,6,.53) 79%, rgba(8,8,6,.32) 100%);
   }
 
   .hero-with-photo .hero-main {
