@@ -1,3 +1,8 @@
+const mobileHeroTuning = document.createElement('link');
+mobileHeroTuning.rel = 'stylesheet';
+mobileHeroTuning.href = 'hero-mobile-tuning.css';
+document.head.appendChild(mobileHeroTuning);
+
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
