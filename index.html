@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Italiana&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="photo-enhancements.css" />
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -24,6 +25,7 @@
       <a href="#experience">Experience</a>
       <a href="#aperitivo">Aperitivo</a>
       <a href="#mixology">Mixology</a>
+      <a href="#atmosphere">Atmosfera</a>
       <a href="#visit">Dove siamo</a>
     </nav>
 
@@ -39,6 +41,7 @@
       <a href="#experience">Experience</a>
       <a href="#aperitivo">Aperitivo</a>
       <a href="#mixology">Mixology</a>
+      <a href="#atmosphere">Atmosfera</a>
       <a href="#visit">Dove siamo</a>
     </nav>
     <div class="mobile-menu-meta">
@@ -48,7 +51,16 @@
   </div>
 
   <main>
-    <section class="hero">
+    <section class="hero hero-with-photo">
+      <div class="hero-photo-layer" aria-hidden="true">
+        <img
+          src="https://coffeeland.ch/frontend/images/Italy/Coffee/626/Reviews/1-626.webp"
+          data-fallback="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-058-738x1024.jpg?ssl=1"
+          alt=""
+          fetchpriority="high"
+        />
+      </div>
+      <div class="hero-photo-shade" aria-hidden="true"></div>
       <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
       <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
 
@@ -72,19 +84,17 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal delay-2" aria-label="Cocktail signature Eden">
-          <div class="orb orb-one"></div>
-          <div class="orb orb-two"></div>
-          <div class="glass">
-            <div class="glass-rim"></div>
-            <div class="drink"></div>
-            <div class="ice ice-one"></div>
-            <div class="ice ice-two"></div>
-            <div class="garnish"></div>
+        <div class="hero-photo-card reveal delay-2">
+          <div class="photo-frame">
+            <img
+              src="https://coffeeland.ch/frontend/images/Italy/Coffee/626/Reviews/1-626.webp"
+              data-fallback="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-058-738x1024.jpg?ssl=1"
+              alt="Cocktail e atmosfera di Eden Francavilla"
+            />
           </div>
-          <div class="visual-note">
+          <div class="photo-card-meta">
             <span>01</span>
-            <p>Signature<br />moments</p>
+            <p>From daylight<br />to after dark</p>
           </div>
         </div>
       </div>
@@ -139,7 +149,7 @@
       </div>
     </section>
 
-    <section class="editorial-band" id="aperitivo">
+    <section class="editorial-band editorial-band-photo" id="aperitivo">
       <div class="editorial-copy section">
         <div class="section-kicker reveal">Aperitivo culture</div>
         <h2 class="display-heading reveal">Quando il giorno<br />diventa <em>sera.</em></h2>
@@ -147,14 +157,15 @@
         <a class="button button-outline reveal" href="tel:+393470717309">Prenota un tavolo <span>↗</span></a>
       </div>
 
-      <div class="editorial-art reveal" aria-hidden="true">
-        <div class="sun"></div>
-        <div class="table-line"></div>
-        <div class="plate plate-one"></div>
-        <div class="plate plate-two"></div>
-        <div class="stem-glass"><span></span></div>
-        <p>APERITIVO<br /><i>at Eden</i></p>
-      </div>
+      <figure class="aperitivo-photo reveal">
+        <img
+          src="https://coffeeland.ch/frontend/images/Italy/Coffee/626/Reviews/2-626.webp"
+          data-fallback="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-056-686x1024.jpg?ssl=1"
+          alt="Aperitivo e cocktail Eden Francavilla"
+          loading="lazy"
+        />
+        <figcaption><span>Golden hour</span><strong>APERITIVO<br /><i>at Eden</i></strong></figcaption>
+      </figure>
     </section>
 
     <section class="mixology section" id="mixology">
@@ -166,19 +177,15 @@
         <p class="mixology-intro reveal">Ingredienti, equilibrio e carattere. Il cocktail diventa il centro della serata.</p>
       </div>
 
-      <div class="cocktail-feature reveal">
+      <div class="cocktail-feature reveal cocktail-feature-photo">
         <div class="cocktail-index">01 / 04</div>
         <div class="cocktail-name">
           <span>Signature</span>
           <h3>EDEN</h3>
           <p>Gin · limone · basilico · note agrumate</p>
         </div>
-        <div class="cocktail-art" aria-hidden="true">
-          <div class="highball">
-            <div class="highball-liquid"></div>
-            <div class="leaf leaf-one"></div>
-            <div class="leaf leaf-two"></div>
-          </div>
+        <div class="cocktail-real-photo">
+          <img src="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-058-738x1024.jpg?ssl=1" alt="Cocktail Eden con gin, limone e basilico" loading="lazy" />
         </div>
         <div class="cocktail-caption">
           <p>Fresh / Botanical / Citrus</p>
@@ -192,6 +199,43 @@
         <div class="cocktail-row reveal"><span>04</span><h4>Tea Time</h4><p>Tea infusion · Gin · Pink grapefruit</p><small>Bright</small></div>
       </div>
       <p class="menu-note reveal">Le proposte cocktail mostrate raccontano creazioni Eden documentate in occasione di eventi. La disponibilità può variare.</p>
+    </section>
+
+    <section class="atmosphere section" id="atmosphere">
+      <div class="atmosphere-heading">
+        <div>
+          <div class="section-kicker reveal">Inside the mood</div>
+          <h2 class="display-heading reveal">Una sera<br /><em>da Eden.</em></h2>
+        </div>
+        <p class="atmosphere-intro reveal">Luci basse, dettagli botanici, bicchieri sul tavolo e il centro di Francavilla appena fuori. Un'atmosfera intima che cambia con l'ora.</p>
+      </div>
+
+      <div class="atmosphere-grid">
+        <figure class="atmosphere-shot atmosphere-shot-main reveal">
+          <img
+            src="https://coffeeland.ch/frontend/images/Italy/Coffee/626/Reviews/3-626.webp"
+            data-fallback="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-063-604x1024.jpg?ssl=1"
+            alt="Atmosfera di Eden Francavilla al Mare"
+            loading="lazy"
+          />
+          <figcaption><span>Francavilla al Mare</span><strong>Eden after dark</strong></figcaption>
+        </figure>
+
+        <figure class="atmosphere-shot reveal delay-1">
+          <img src="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-063-604x1024.jpg?ssl=1" alt="Cocktail rosso creato da Eden" loading="lazy" />
+          <figcaption><span>Mixology</span><strong>Details matter</strong></figcaption>
+        </figure>
+
+        <figure class="atmosphere-shot atmosphere-shot-wide reveal delay-2">
+          <img src="https://i0.wp.com/www.foodnewsitalia.it/wp-content/uploads/2025/07/Mercato-del-Pane-forno-pizza-pasticceria-dolci-Abruzzo-menu-Francavilla-al-Mare-Chieti-Montesilvano-Pescara-060-768x1024.jpg?ssl=1" alt="Aperitivo con cocktail creati da Eden Francavilla" loading="lazy" />
+          <figcaption><span>Aperitivo</span><strong>Stay a little longer</strong></figcaption>
+        </figure>
+      </div>
+
+      <div class="photo-credit reveal">
+        <span>Real venue / review imagery: Coffeeland.</span>
+        <span>Eden cocktail collaboration photography: Food News Italia, Mercato del Pane opening, 2025.</span>
+      </div>
     </section>
 
     <section class="quote-section section">
@@ -249,5 +293,13 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    document.querySelectorAll('img[data-fallback]').forEach((img) => {
+      img.addEventListener('error', () => {
+        const fallback = img.dataset.fallback;
+        if (fallback && img.src !== fallback) img.src = fallback;
+      }, { once: true });
+    });
+  </script>
 </body>
 </html>
