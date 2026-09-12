@@ -10,7 +10,19 @@ Premium, mobile-first homepage concept for Eden Francavilla built around the pos
 - Sticky mobile CTAs for booking, directions and Instagram
 - Smooth reveal interactions and subtle pointer depth
 - Verified public contact/location details only
+- Real Eden-linked photography integrated into hero, aperitivo, mixology and atmosphere sections
 - Cocktail examples are presented with a note that availability may vary
+
+## Photography
+
+The mockup uses public imagery connected to Eden Francavilla and a documented 2025 Eden cocktail collaboration:
+
+- Venue/review imagery: Coffeeland listing for Eden Francavilla al Mare
+- Cocktail / aperitivo imagery: Food News Italia coverage of the Mercato del Pane Francavilla opening, where the cocktails were created by Eden Francavilla
+
+Remote venue images include a fallback to the documented event photography so the design remains visually stable if a third-party image host blocks hotlinking.
+
+For a production website, replace third-party imagery with owner-supplied original files and confirm usage rights.
 
 ## Tech
 
