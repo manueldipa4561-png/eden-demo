@@ -25,7 +25,7 @@ The implementation requests responsive derivatives from `images.unsplash.com` wi
 
 ## D. Fallback imagery
 
-Remote atmospheric images that expose a `data-fallback` in `index.html` fall back to Eden-linked Coffeeland imagery if the primary source fails. The fallback script removes responsive-source attributes before applying the fallback so the browser does not retry a failed `srcset` candidate.
+Selected remote atmospheric images expose a `data-fallback` in `index.html` so Eden-linked Coffeeland imagery can be used as a backup if the primary source fails.
 
 ## Production note
 
