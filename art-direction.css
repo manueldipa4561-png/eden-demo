@@ -1,0 +1,533 @@
+/* Eden — final responsive art-direction layer.
+   Loaded last so the restored identity stays intact while photography,
+   composition and focal points become more deliberate across devices. */
+
+:root {
+  --eden-content: 1420px;
+}
+
+/* Global rhythm */
+.section {
+  padding-top: clamp(4.75rem, 7vw, 7rem);
+  padding-bottom: clamp(4.75rem, 7vw, 7rem);
+}
+
+.manifesto-grid,
+.mixology-heading,
+.cocktail-list,
+.atmosphere-heading,
+.atmosphere-grid,
+.photo-credit {
+  max-width: var(--eden-content);
+}
+
+/* Hero — stronger image quality and a more intentional desktop composition. */
+.hero-with-photo {
+  min-height: clamp(760px, 96svh, 980px);
+  padding-top: clamp(7.5rem, 10vh, 9.25rem);
+  padding-bottom: 2.5rem;
+}
+
+.hero-photo-layer {
+  opacity: .6;
+}
+
+.hero-photo-layer img {
+  object-position: 50% 53%;
+  transform: scale(1.015);
+  filter: saturate(.86) contrast(1.06) brightness(.6);
+}
+
+.hero-photo-shade {
+  background:
+    radial-gradient(ellipse at 25% 48%, rgba(8,8,6,.52) 0%, rgba(8,8,6,.26) 38%, transparent 66%),
+    linear-gradient(90deg, rgba(8,8,6,.97) 0%, rgba(8,8,6,.88) 30%, rgba(8,8,6,.55) 55%, rgba(8,8,6,.24) 82%, rgba(8,8,6,.16) 100%),
+    linear-gradient(180deg, rgba(8,8,6,.62) 0%, rgba(8,8,6,.08) 36%, rgba(8,8,6,.15) 66%, rgba(8,8,6,.92) 100%);
+}
+
+.hero-glow {
+  opacity: .08;
+}
+
+.hero-main {
+  width: min(100%, var(--eden-content));
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, .72fr);
+  gap: clamp(2.5rem, 5vw, 6rem);
+  margin: clamp(1.5rem, 3vh, 2.5rem) auto;
+}
+
+.hero-copy {
+  max-width: 780px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(4.8rem, 7.8vw, 8.4rem);
+  line-height: .84;
+}
+
+.hero-copy .accent-word {
+  transform: translateX(.24em);
+}
+
+.hero-intro {
+  max-width: 36ch;
+  margin-top: 2rem;
+  line-height: 1.68;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+}
+
+.hero-photo-card {
+  width: min(100%, 560px);
+  height: clamp(500px, 62svh, 690px);
+  min-height: 0;
+  justify-self: end;
+  padding: 1rem;
+}
+
+.photo-frame {
+  border-radius: 46% 46% 18px 18px / 14% 14% 18px 18px;
+  border-color: rgba(240,234,220,.2);
+  box-shadow: 0 26px 76px rgba(0,0,0,.34);
+}
+
+.photo-frame img {
+  object-position: 50% 52%;
+  filter: saturate(.9) contrast(1.05) brightness(.88);
+}
+
+.photo-card-meta {
+  background: rgba(9,9,7,.72);
+  border-color: rgba(240,234,220,.18);
+  backdrop-filter: blur(10px);
+}
+
+.hero-footer {
+  width: min(100%, var(--eden-content));
+  margin-inline: auto;
+}
+
+/* The three rhythms stay elegant but are less oversized on common laptops. */
+.rhythm-grid {
+  max-width: var(--eden-content);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rhythm-card {
+  min-height: 390px;
+  padding: 1.6rem;
+}
+
+/* Aperitivo — portrait photography gets room to breathe without feeling stretched. */
+.editorial-band-photo {
+  grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+  min-height: clamp(720px, 82svh, 860px);
+  background: #b8b27d;
+}
+
+.editorial-band-photo .editorial-copy {
+  max-width: 700px;
+}
+
+.aperitivo-photo {
+  min-height: clamp(720px, 82svh, 860px);
+}
+
+.aperitivo-photo img {
+  object-position: 52% 58%;
+  filter: saturate(.9) contrast(1.04) brightness(.86);
+}
+
+.aperitivo-photo::before {
+  width: 22%;
+  background: linear-gradient(90deg, rgba(184,178,125,.66), transparent);
+}
+
+/* Mixology — the documented Eden collaboration remains the factual anchor,
+   but the photograph is framed and proportioned rather than over-stretched. */
+.cocktail-feature {
+  width: min(100%, var(--eden-content));
+  margin-inline: auto;
+  min-height: 570px;
+  grid-template-columns: .1fr .58fr minmax(360px, .95fr) .27fr;
+  gap: clamp(1.25rem, 2.6vw, 2.5rem);
+}
+
+.cocktail-real-photo {
+  min-height: 510px;
+  border: 1px solid rgba(240,234,220,.15);
+  border-radius: 14px;
+}
+
+.cocktail-real-photo img {
+  object-position: center 52%;
+  filter: saturate(.82) contrast(1.05) brightness(.82);
+}
+
+.cocktail-caption {
+  line-height: 1.6;
+}
+
+/* Gallery — asymmetry and image hierarchy instead of three equal stock tiles. */
+.atmosphere-heading {
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.atmosphere-grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, .7fr);
+  grid-template-rows: minmax(300px, 340px) minmax(300px, 340px);
+  gap: clamp(.75rem, 1vw, 1rem);
+}
+
+.atmosphere-shot {
+  border-color: rgba(240,234,220,.16);
+  border-radius: 10px;
+}
+
+.atmosphere-shot-main img {
+  object-position: 52% 50%;
+  filter: saturate(.82) contrast(1.08) brightness(.72);
+}
+
+.atmosphere-shot:not(.atmosphere-shot-main) img {
+  filter: saturate(.84) contrast(1.06) brightness(.8);
+}
+
+.photo-credit {
+  line-height: 1.6;
+  color: #817c70;
+}
+
+/* Refined hover only where hover genuinely exists. */
+@media (hover:hover) and (pointer:fine) {
+  .photo-frame img,
+  .aperitivo-photo img,
+  .atmosphere-shot img,
+  .cocktail-real-photo img {
+    transition-duration: .55s;
+  }
+
+  .hero-photo-card:hover .photo-frame img,
+  .aperitivo-photo:hover img,
+  .atmosphere-shot:hover img,
+  .cocktail-real-photo:hover img {
+    transform: scale(1.018);
+  }
+}
+
+/* Tablet / compact laptop: keep the hero editorial rather than stacking into
+   an excessively long first screen. */
+@media (min-width: 761px) and (max-width: 1050px) {
+  .hero-with-photo {
+    min-height: 760px;
+    padding-top: 7rem;
+  }
+
+  .hero-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, .72fr);
+    gap: clamp(1.6rem, 4vw, 3rem);
+    align-items: center;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(4.2rem, 8.2vw, 5.6rem);
+  }
+
+  .hero-copy .accent-word {
+    transform: translateX(.12em);
+  }
+
+  .hero-photo-card {
+    width: 100%;
+    height: clamp(470px, 58svh, 570px);
+    min-height: 0;
+  }
+
+  .hero-photo-layer img {
+    object-position: 56% 50%;
+  }
+
+  .cocktail-feature {
+    grid-template-columns: .1fr .64fr minmax(300px, 1fr);
+  }
+
+  .cocktail-caption {
+    display: none;
+  }
+
+  .atmosphere-grid {
+    grid-template-columns: 1.15fr .85fr;
+    grid-template-rows: 300px 300px;
+  }
+}
+
+/* iPhone and narrow phones: use the full-bleed photograph as the hero itself.
+   Hiding the secondary photo card avoids a long, repetitive first screen. */
+@media (max-width: 760px) {
+  :root {
+    --pad: clamp(1rem, 5vw, 1.35rem);
+  }
+
+  .section {
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+  }
+
+  .hero-with-photo {
+    min-height: 100svh;
+    padding-top: 5.6rem;
+    padding-bottom: max(1.35rem, env(safe-area-inset-bottom));
+  }
+
+  .hero-photo-layer {
+    opacity: .66;
+  }
+
+  .hero-photo-layer img {
+    object-position: 60% 50%;
+    transform: scale(1.01);
+    filter: saturate(.84) contrast(1.08) brightness(.62);
+  }
+
+  .hero-photo-shade {
+    background:
+      radial-gradient(ellipse at 25% 36%, rgba(8,8,6,.65) 0%, rgba(8,8,6,.31) 42%, transparent 72%),
+      linear-gradient(180deg, rgba(8,8,6,.88) 0%, rgba(8,8,6,.58) 28%, rgba(8,8,6,.34) 52%, rgba(8,8,6,.7) 77%, #080806 100%),
+      linear-gradient(90deg, rgba(8,8,6,.88) 0%, rgba(8,8,6,.57) 68%, rgba(8,8,6,.24) 100%);
+  }
+
+  .hero-main {
+    display: block;
+    margin: auto 0 1.2rem;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.55rem, 16.5vw, 5.2rem);
+    line-height: .84;
+    letter-spacing: -.05em;
+    max-width: 8.7ch;
+  }
+
+  .hero-copy .accent-word {
+    transform: translateX(.06em);
+  }
+
+  .hero-intro {
+    max-width: 30ch;
+    margin: 1.4rem 0 0;
+    font-size: .94rem;
+    line-height: 1.58;
+    color: #eee8dc;
+  }
+
+  .hero-actions {
+    margin: 1.4rem 0 0;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .hero-photo-card {
+    display: none;
+  }
+
+  .hero-footer {
+    margin-top: 1.2rem;
+  }
+
+  .hero-glow {
+    display: none;
+  }
+
+  .rhythm-card {
+    min-height: 300px;
+    padding: 1.4rem;
+  }
+
+  .editorial-band-photo {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .editorial-band-photo .editorial-copy {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .aperitivo-photo {
+    min-height: clamp(500px, 68svh, 650px);
+  }
+
+  .aperitivo-photo img {
+    object-position: 50% 55%;
+  }
+
+  .aperitivo-photo::before {
+    width: 100%;
+    height: 28%;
+    inset: 0 0 auto;
+    background: linear-gradient(180deg, rgba(184,178,125,.55), transparent);
+  }
+
+  .mixology-heading {
+    gap: 1.4rem;
+    margin-bottom: 2rem;
+  }
+
+  .cocktail-feature {
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 1rem;
+    padding: 1.4rem 0 1.8rem;
+  }
+
+  .cocktail-index {
+    order: 1;
+  }
+
+  .cocktail-name {
+    order: 2;
+    margin-top: 0;
+  }
+
+  .cocktail-name h3 {
+    font-size: clamp(3.2rem, 15vw, 4.5rem);
+    margin-bottom: .8rem;
+  }
+
+  .cocktail-real-photo {
+    order: 3;
+    width: 100%;
+    min-height: clamp(420px, 62svh, 560px);
+    border-radius: 12px;
+  }
+
+  .cocktail-caption {
+    order: 4;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    text-align: left;
+  }
+
+  .cocktail-list {
+    margin-top: .6rem;
+  }
+
+  .atmosphere-heading {
+    gap: 1.5rem;
+    margin-bottom: 2.6rem;
+  }
+
+  .atmosphere-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: .8rem;
+  }
+
+  .atmosphere-shot,
+  .atmosphere-shot-main,
+  .atmosphere-shot-wide {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .atmosphere-shot-main {
+    min-height: clamp(480px, 64svh, 620px);
+  }
+
+  .atmosphere-shot:not(.atmosphere-shot-main) {
+    min-height: 340px;
+  }
+
+  .atmosphere-shot-main img {
+    object-position: 56% 50%;
+  }
+
+  .hero-photo-card:hover .photo-frame img,
+  .aperitivo-photo:hover img,
+  .atmosphere-shot:hover img,
+  .cocktail-real-photo:hover img {
+    transform: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero-photo-layer img {
+    object-position: 63% 50%;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(3.45rem, 16.2vw, 4.55rem);
+  }
+
+  .hero-eyebrow {
+    letter-spacing: .14em;
+  }
+
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  .aperitivo-photo figcaption {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .aperitivo-photo figcaption strong {
+    font-size: clamp(2.65rem, 12vw, 3.7rem);
+  }
+
+  .atmosphere-shot figcaption {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .4rem;
+  }
+
+  .photo-credit {
+    font-size: .52rem;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero-copy h1 {
+    font-size: 3.15rem;
+    max-width: 100%;
+  }
+
+  .hero-copy .accent-word {
+    transform: translateX(.02em);
+  }
+
+  .hero-intro {
+    max-width: 28ch;
+    font-size: .88rem;
+  }
+
+  .hero-actions .button {
+    min-width: 150px;
+  }
+
+  .cocktail-name h3 {
+    font-size: 3.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame img,
+  .aperitivo-photo img,
+  .atmosphere-shot img,
+  .cocktail-real-photo img {
+    transition: none !important;
+    transform: none !important;
+  }
+}
