@@ -2,18 +2,31 @@
 
 This is a non-commissioned concept website.
 
-## Atmospheric concept imagery
+## A. Atmospheric / concept imagery
 
-The current hero, aperitivo and main atmosphere compositions use high-resolution Unsplash photography. These images are editorial atmosphere references and do not necessarily depict Eden Francavilla.
+The hero, aperitivo and lead atmosphere compositions use high-resolution Unsplash photography as editorial atmosphere references. These images do **not** necessarily depict Eden Francavilla.
 
-- Haberdoedas — photo `unaOfOTWGD0` — hero background
-- juan saav — photo `OmDRUN0Lemc` — hero editorial photo
-- Andrew Ling — photo `Hq40CpnPJeA` — aperitivo section
-- Phil Desforges — photo `5TFFH5AkETs` — atmosphere section
+Current Unsplash source identifiers used in `index.html`:
 
-## Eden-linked imagery
+- Hero background — `photo-1776774970642-771d22a42958`
+- Hero editorial cocktail image — `photo-1773798795857-15c230fd2e43`
+- Aperitivo section — `photo-1707069517655-544ad76c8771`
+- Lead atmosphere image — `photo-1768948166220-4de4adeeb3ff`
 
-- Coffeeland listing for Eden Francavilla al Mare — public venue/review imagery retained in the atmosphere gallery and as image fallbacks.
-- Food News Italia, Mercato del Pane Francavilla opening (25 July 2025) — coverage documents cocktails created for the event by Eden Francavilla; selected event imagery remains in the mixology storytelling.
+The implementation requests responsive derivatives from `images.unsplash.com` with `srcset`/`sizes` where useful.
 
-For a commissioned production site, replace third-party concept imagery with approved owner-supplied photography.
+## B. Eden-linked imagery
+
+- Coffeeland listing for Eden Francavilla al Mare — public venue/review imagery is retained in the atmosphere gallery and as selected fallbacks.
+
+## C. Documented event imagery
+
+- Food News Italia, coverage of the Mercato del Pane Francavilla opening (25 July 2025) — the current demo uses selected images from that coverage in the mixology/aperitivo storytelling because the source documents cocktails created for the event by Eden Francavilla.
+
+## D. Fallback imagery
+
+Remote atmospheric images that expose a `data-fallback` in `index.html` fall back to Eden-linked Coffeeland imagery if the primary source fails. The fallback script removes responsive-source attributes before applying the fallback so the browser does not retry a failed `srcset` candidate.
+
+## Production note
+
+For a commissioned production site, replace third-party concept and review imagery with approved owner-supplied original photography and confirm all usage rights before launch.
