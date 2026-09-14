@@ -35,3 +35,6 @@ Open `index.html` directly or serve the folder with any simple local server.
 ## Deployment
 
 The project can be deployed directly from the repository root on Netlify or GitHub Pages.
+
+## Versione pacchetto
+La configurazione attuale è descritta in [DEMO_SCOPE.md](DEMO_SCOPE.md). Questa specifica prevale sull’elenco iniziale delle funzionalità sopra riportato.
