@@ -7,22 +7,25 @@ Premium, mobile-first homepage concept for Eden Francavilla built around the pos
 - Dark editorial visual system
 - Coffee → aperitivo → night-time mixology storytelling
 - Responsive mobile-first layout
-- Sticky mobile CTAs for booking, directions and Instagram
-- Smooth reveal interactions and subtle pointer depth
+- Smooth reveal interactions and restrained image motion
 - Verified public contact/location details only
-- Real Eden-linked photography integrated into hero, aperitivo, mixology and atmosphere sections
+- Responsive photographic art direction for iPhone, tablet and laptop layouts
 - Cocktail examples are presented with a note that availability may vary
 
 ## Photography
 
-The mockup uses public imagery connected to Eden Francavilla and a documented 2025 Eden cocktail collaboration:
+The current concept deliberately separates **atmospheric editorial photography** from **Eden-linked imagery**.
 
-- Venue/review imagery: Coffeeland listing for Eden Francavilla al Mare
-- Cocktail / aperitivo imagery: Food News Italia coverage of the Mercato del Pane Francavilla opening, where the cocktails were created by Eden Francavilla
+High-resolution Unsplash photographs are used in the hero, aperitivo and main atmosphere compositions to avoid low-resolution stretching and to give the concept a stronger editorial rhythm. They are clearly treated as atmosphere references and do not necessarily depict Eden Francavilla.
 
-Remote venue images include a fallback to the documented event photography so the design remains visually stable if a third-party image host blocks hotlinking.
+Eden-linked imagery is still present through:
 
-For a production website, replace third-party imagery with owner-supplied original files and confirm usage rights.
+- the public Coffeeland listing for Eden Francavilla al Mare
+- Food News Italia coverage of the 2025 Mercato del Pane Francavilla opening, where cocktails for the event were created by Eden Francavilla
+
+Remote venue images retain documented fallbacks where useful. Full source notes are listed in `CREDITS.md`.
+
+For a commissioned production website, replace third-party concept imagery with approved owner-supplied original photography.
 
 ## Tech
 
