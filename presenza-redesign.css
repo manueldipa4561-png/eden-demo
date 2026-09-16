@@ -1,0 +1,123 @@
+/* Eden — Presenza redesign
+   Visual-only upgrade: keeps the one-page Presenza scope intact. */
+
+:root{
+  --eden-ink:#0e0e0c;
+  --eden-cream:#f2ead9;
+  --eden-sand:#d3b98f;
+  --eden-olive:#3f4a31;
+  --eden-amber:#c6773e;
+  --eden-wine:#5b2022;
+}
+
+body{background:var(--eden-ink)}
+.site-header{background:linear-gradient(180deg,rgba(14,14,12,.94),rgba(14,14,12,.72));backdrop-filter:blur(16px);border-bottom:1px solid rgba(242,234,217,.1)}
+.brand-mark{border-color:rgba(242,234,217,.35)}
+.nav-cta{border-radius:999px;border-color:rgba(242,234,217,.28);padding-inline:1.25rem}
+
+.hero-with-photo{background:var(--eden-ink)}
+.hero-photo-layer{opacity:.22}
+.hero-photo-layer img{filter:saturate(.88) contrast(1.03) brightness(.72);object-position:center 46%}
+.hero-photo-shade{background:linear-gradient(90deg,rgba(14,14,12,.98) 0%,rgba(14,14,12,.92) 40%,rgba(14,14,12,.6) 66%,rgba(14,14,12,.3) 100%),linear-gradient(180deg,rgba(14,14,12,.2),rgba(14,14,12,.78))}
+.hero-main{align-items:center}
+.hero-copy h1{font-size:clamp(5rem,8vw,8.8rem);letter-spacing:-.045em;line-height:.82}
+.hero-copy h1 span{display:block}
+.hero-copy .accent-word{color:var(--eden-sand);font-style:italic;transform:translateX(.18em)}
+.hero-intro{font-size:clamp(1rem,1.25vw,1.2rem);max-width:34ch;color:#d8d0c2}
+.button-primary{background:var(--eden-cream);color:var(--eden-ink);border-color:var(--eden-cream);border-radius:999px;padding-inline:1.5rem}
+.button-primary:hover{background:var(--eden-sand);border-color:var(--eden-sand)}
+.hero-photo-card{transform:translateY(2rem)}
+.photo-frame{border-radius:220px 220px 24px 24px;overflow:hidden;box-shadow:0 35px 90px rgba(0,0,0,.42);border:1px solid rgba(242,234,217,.18)}
+.photo-frame img{filter:saturate(.94) contrast(1.04) brightness(.9)}
+.photo-card-meta{background:rgba(14,14,12,.78);border-color:rgba(242,234,217,.14)}
+
+.manifesto{background:var(--eden-cream);color:var(--eden-ink)}
+.manifesto .section-kicker{color:var(--eden-wine)}
+.manifesto-grid{border-top:1px solid rgba(14,14,12,.18);padding-top:1.8rem}
+.display-heading{letter-spacing:-.035em}
+.display-heading em{color:var(--eden-wine)}
+.rhythm-grid{gap:1px;background:rgba(14,14,12,.13)}
+.rhythm-card{background:var(--eden-cream);border:0;transition:transform .35s ease,background .35s ease,color .35s ease}
+.rhythm-card.featured{background:#e7d7ba}
+.rhythm-card .rhythm-number,.rhythm-card .eyebrow{color:var(--eden-wine)}
+@media(hover:hover){.rhythm-card:hover{transform:translateY(-8px);background:#e8dcc6}}
+
+.editorial-band-photo{background:var(--eden-olive);color:#f8f2e7}
+.editorial-band-photo .section-kicker{color:var(--eden-sand)}
+.editorial-band-photo .display-heading em{color:var(--eden-sand)}
+.editorial-band-photo .button-outline{border-radius:999px;border-color:rgba(248,242,231,.5)}
+.aperitivo-photo{overflow:hidden}
+.aperitivo-photo img{filter:saturate(.96) contrast(1.02) brightness(.94);transform:scale(1.01)}
+.aperitivo-photo::before{background:linear-gradient(90deg,rgba(63,74,49,.72),transparent 36%)}
+.aperitivo-photo figcaption{backdrop-filter:blur(12px);background:rgba(14,14,12,.28);border:1px solid rgba(255,255,255,.12);padding:1.15rem 1.3rem;border-radius:14px}
+
+.mixology{position:relative;overflow:hidden;background:var(--eden-ink);color:#f5efe4;isolation:isolate}
+.mixology::before{content:"";position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(14,14,12,.98) 0%,rgba(14,14,12,.9) 52%,rgba(14,14,12,.72) 100%),var(--eden-mixology-concept,none);background-size:cover;background-position:center;opacity:.34;z-index:-1}
+.mixology .section-kicker{color:var(--eden-sand)}
+.mixology .display-heading em{color:var(--eden-sand)}
+.cocktail-feature{border-top:1px solid rgba(242,234,217,.16);border-bottom:1px solid rgba(242,234,217,.16);padding-block:2rem}
+.cocktail-real-photo{box-shadow:0 28px 80px rgba(0,0,0,.4);border-radius:180px 180px 18px 18px;overflow:hidden}
+.cocktail-name>span,.cocktail-index,.cocktail-caption{color:var(--eden-sand)}
+.cocktail-row{border-color:rgba(242,234,217,.14)}
+
+.atmosphere{background:var(--eden-cream);color:var(--eden-ink)}
+.atmosphere .section-kicker{color:var(--eden-wine)}
+.atmosphere .display-heading em{color:var(--eden-wine)}
+.atmosphere-grid{gap:1rem}
+.atmosphere-shot{border:0;border-radius:0;box-shadow:0 22px 55px rgba(30,24,18,.09)}
+.atmosphere-shot-main{border-radius:160px 0 0 0}
+.atmosphere-shot-main img{filter:saturate(.9) contrast(1.04) brightness(.9)}
+.atmosphere-shot figcaption{background:linear-gradient(180deg,transparent,rgba(14,14,12,.72));padding:1.4rem}
+.photo-credit{color:#6f6659}
+
+.visit{background:var(--eden-wine);color:#f8f2e7}
+.visit .section-kicker{color:var(--eden-sand)}
+.visit .display-heading em{color:var(--eden-sand)}
+.visit-grid{border-color:rgba(248,242,231,.18)}
+.visit-block{border-color:rgba(248,242,231,.18)}
+.visit-label{color:var(--eden-sand)}
+.visit-cta>a{background:var(--eden-cream);color:var(--eden-ink);border-radius:18px}
+.visit .button-outline{border-radius:999px;border-color:rgba(248,242,231,.45)}
+
+.site-footer{background:#0a0a09}
+
+.hero-photo-card,.rhythm-card,.aperitivo-photo,.cocktail-feature,.atmosphere-shot,.visit-block{will-change:transform}
+
+@media(max-width:1050px){
+  .hero-copy h1{font-size:clamp(4.25rem,8.4vw,6rem)}
+  .hero-photo-card{transform:none}
+}
+
+@media(max-width:760px){
+  .site-header{background:rgba(14,14,12,.88)}
+  .hero-with-photo{min-height:auto;padding-top:6.2rem;padding-bottom:2.5rem}
+  .hero-photo-layer{opacity:.08}
+  .hero-photo-shade{background:linear-gradient(180deg,rgba(14,14,12,.9),rgba(14,14,12,.94))}
+  .hero-main{display:block}
+  .hero-copy h1{font-size:clamp(3.75rem,16vw,5.1rem);line-height:.84;max-width:8ch}
+  .hero-copy .accent-word{transform:none}
+  .hero-photo-card{display:block;width:100%;height:auto;margin-top:2rem;padding:0}
+  .photo-frame{height:min(72svh,520px);border-radius:140px 140px 18px 18px}
+  .photo-card-meta{margin-top:.6rem}
+  .hero-footer{margin-top:1.4rem}
+  .manifesto-grid,.mixology-heading,.atmosphere-heading{gap:1.6rem}
+  .rhythm-grid{display:block;background:transparent}
+  .rhythm-card{min-height:auto;border-top:1px solid rgba(14,14,12,.15);padding:1.6rem 0}
+  .editorial-band-photo{display:block}
+  .editorial-band-photo .editorial-copy{padding-bottom:2.75rem}
+  .aperitivo-photo{min-height:520px}
+  .aperitivo-photo::before{background:linear-gradient(180deg,rgba(63,74,49,.28),transparent 32%)}
+  .cocktail-real-photo{border-radius:120px 120px 16px 16px}
+  .atmosphere-shot-main{border-radius:110px 0 0 0}
+  .visit-cta>a{border-radius:14px}
+}
+
+@media(max-width:430px){
+  .hero-copy h1{font-size:clamp(3.4rem,15.5vw,4.5rem)}
+  .photo-frame{height:430px}
+  .aperitivo-photo{min-height:470px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .rhythm-card,.hero-photo-card,.aperitivo-photo,.cocktail-feature,.atmosphere-shot,.visit-block{transition:none!important;transform:none!important}
+}
