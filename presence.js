@@ -7,10 +7,24 @@ if (!document.querySelector('link[href="interaction-polish.css"]')) {
   document.head.appendChild(interactionStyles);
 }
 
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const coarsePointer = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('.mobile-menu');
 const header = document.querySelector('.site-header');
 const backgroundRegions = [document.querySelector('main'), document.querySelector('footer')].filter(Boolean);
+
+let lastInputWasKeyboard = false;
+let menuCloseTimer = 0;
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Tab') lastInputWasKeyboard = true;
+}, { passive: true });
+
+document.addEventListener('pointerdown', () => {
+  lastInputWasKeyboard = false;
+}, { passive: true });
 
 function setBackgroundInert(isOpen) {
   backgroundRegions.forEach((region) => {
@@ -19,10 +33,16 @@ function setBackgroundInert(isOpen) {
   });
 }
 
-function setMenu(isOpen) {
+function finishMenuClose() {
+  if (!menu) return;
+  menu.hidden = true;
+  menu.classList.remove('is-closing');
+}
+
+function setMenu(isOpen, { returnFocus = false } = {}) {
   if (!toggle || !menu) return;
 
-  menu.hidden = !isOpen;
+  window.clearTimeout(menuCloseTimer);
   toggle.classList.toggle('active', isOpen);
   toggle.setAttribute('aria-expanded', String(isOpen));
   toggle.setAttribute('aria-label', isOpen ? 'Chiudi menu' : 'Apri menu');
@@ -30,12 +50,30 @@ function setMenu(isOpen) {
   setBackgroundInert(isOpen);
 
   if (isOpen) {
-    requestAnimationFrame(() => menu.querySelector('a')?.focus());
+    menu.hidden = false;
+    menu.classList.remove('is-closing');
+
+    requestAnimationFrame(() => {
+      menu.classList.add('is-open');
+      if (lastInputWasKeyboard) menu.querySelector('a')?.focus();
+    });
+    return;
   }
+
+  menu.classList.remove('is-open');
+
+  if (reducedMotion) {
+    finishMenuClose();
+  } else {
+    menu.classList.add('is-closing');
+    menuCloseTimer = window.setTimeout(finishMenuClose, 160);
+  }
+
+  if (returnFocus && lastInputWasKeyboard) toggle.focus();
 }
 
 if (toggle && menu) {
-  toggle.addEventListener('click', () => setMenu(menu.hidden));
+  toggle.addEventListener('click', () => setMenu(menu.hidden || !menu.classList.contains('is-open')));
 
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => setMenu(false));
@@ -43,8 +81,8 @@ if (toggle && menu) {
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !menu.hidden) {
-      setMenu(false);
-      toggle.focus();
+      event.preventDefault();
+      setMenu(false, { returnFocus: true });
     }
   });
 
@@ -53,13 +91,29 @@ if (toggle && menu) {
   }, { passive: true });
 }
 
+// Give touch users immediate physical feedback on genuinely interactive controls only.
+// Using Pointer Events avoids touch-specific duplicate click handling.
+if (coarsePointer) {
+  const pressTargets = document.querySelectorAll(
+    '.button, .header-cta, .menu-toggle, .mobile-menu a, .hero-conversion-row a, .visit-meta a, .location-card, .site-footer a'
+  );
+
+  const release = (element) => element.classList.remove('is-pressed');
+
+  pressTargets.forEach((element) => {
+    element.addEventListener('pointerdown', () => element.classList.add('is-pressed'), { passive: true });
+    element.addEventListener('pointerup', () => release(element), { passive: true });
+    element.addEventListener('pointercancel', () => release(element), { passive: true });
+    element.addEventListener('pointerleave', () => release(element), { passive: true });
+  });
+}
+
 if (header) {
   const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 24);
   updateHeader();
   window.addEventListener('scroll', updateHeader, { passive: true });
 }
 
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const reveals = document.querySelectorAll('.reveal');
 
 if (reducedMotion || !('IntersectionObserver' in window)) {
@@ -121,7 +175,6 @@ if (desktopNavLinks.length && trackedSections.length) {
 
 // Fine-pointer only: tiny image drift makes the hero feel responsive without turning it into a gimmick.
 // It never runs on touch devices and respects reduced-motion preferences.
-const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 const heroCard = document.querySelector('.hero-card');
 
 if (heroCard && finePointer && !reducedMotion) {
