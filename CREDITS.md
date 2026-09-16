@@ -2,31 +2,31 @@
 
 This is a non-commissioned concept website.
 
-## A. Atmospheric / concept imagery
+## A. Higgsfield concept imagery
 
-The hero, aperitivo and lead atmosphere compositions use high-resolution Unsplash photography as editorial atmosphere references. These images do **not** necessarily depict Eden Francavilla.
+The Presenza redesign uses four Higgsfield-generated editorial concepts to establish the visual direction. These images are **concept imagery only** and are not presented as photographs of the real Eden Francavilla venue.
 
-Current Unsplash source identifiers used in `index.html`:
+Generation jobs used by the demo:
 
-- Hero background — `photo-1776774970642-771d22a42958`
-- Hero editorial cocktail image — `photo-1773798795857-15c230fd2e43`
-- Aperitivo section — `photo-1707069517655-544ad76c8771`
-- Lead atmosphere image — `photo-1768948166220-4de4adeeb3ff`
+- Hero / golden-hour lounge concept — `774140c1-2d47-47a0-85df-9016b46a8376`
+- Aperitivo / coastal golden-hour concept — `632c054c-0f1f-443c-a593-0047ae0db428`
+- Mixology / after-dark cocktail concept — `e654698d-63de-4032-b937-a3362b3835ee`
+- Atmosphere / dusk lounge concept — `96f90932-8653-4814-a7c5-5a631523db85`
 
-The implementation requests responsive derivatives from `images.unsplash.com` with `srcset`/`sizes` where useful.
+The images are injected by `presence.js`, while `presenza-redesign.css` applies the Presenza-tier visual treatment.
 
 ## B. Eden-linked imagery
 
-- Coffeeland listing for Eden Francavilla al Mare — public venue/review imagery is retained in the atmosphere gallery and as selected fallbacks.
+- Coffeeland listing for Eden Francavilla al Mare — public venue/review imagery is retained in the atmosphere gallery and as selected documented references.
 
 ## C. Documented event imagery
 
-- Food News Italia, coverage of the Mercato del Pane Francavilla opening (25 July 2025) — the current demo uses selected images from that coverage in the mixology/aperitivo storytelling because the source documents cocktails created for the event by Eden Francavilla.
+- Food News Italia, coverage of the Mercato del Pane Francavilla opening (25 July 2025) — the demo retains selected imagery because the source documents cocktails created for the event by Eden Francavilla.
 
-## D. Fallback imagery
+## D. Historical concept sources
 
-Selected remote atmospheric images expose a `data-fallback` in `index.html` so Eden-linked Coffeeland imagery can be used as a backup if the primary source fails.
+Earlier iterations used Unsplash atmosphere references in the hero, aperitivo and lead-atmosphere compositions. The current Presenza redesign supersedes those primary concept slots with the Higgsfield assets above. The original references remain documented in repository history.
 
 ## Production note
 
-For a commissioned production site, replace third-party concept and review imagery with approved owner-supplied original photography and confirm all usage rights before launch.
+For a commissioned production site, replace third-party and generated concept imagery with approved owner-supplied original photography wherever available, and confirm all usage rights and factual business information before launch.
