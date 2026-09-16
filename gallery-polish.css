@@ -1,0 +1,319 @@
+/* Final visual refinement — Eden Presenza
+   Focus: image crops, atmosphere, and a more cohesive hospitality art direction.
+   Loaded after styles.css so the underlying layout remains intact. */
+
+:root {
+  --cream-soft: #f5eee1;
+  --cream-warm: #eee3d1;
+  --ink-warm: #15150f;
+  --sage-soft: #a7b273;
+  --amber-soft: #e3934f;
+  --shadow-image: 0 28px 70px rgba(20, 18, 12, .18);
+}
+
+/* Cohesive section atmosphere */
+.hero {
+  background:
+    radial-gradient(circle at 74% 18%, rgba(154, 165, 106, .10), transparent 34%),
+    var(--ink);
+}
+
+.hero-backdrop img {
+  filter: saturate(.88) contrast(1.08) brightness(.84);
+  transform: scale(1.025);
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(90deg, rgba(17, 18, 15, .97) 0%, rgba(17, 18, 15, .86) 43%, rgba(17, 18, 15, .34) 75%, rgba(17, 18, 15, .56) 100%),
+    linear-gradient(0deg, rgba(17, 18, 15, .82), transparent 58%);
+}
+
+.experience {
+  background:
+    radial-gradient(circle at 88% 9%, rgba(154, 165, 106, .13), transparent 28%),
+    linear-gradient(180deg, var(--cream-soft), var(--cream));
+}
+
+.aperitivo {
+  background:
+    radial-gradient(circle at 82% 22%, rgba(217, 138, 74, .12), transparent 30%),
+    linear-gradient(145deg, #1b1c16, #15160f 72%);
+}
+
+.mixology {
+  background:
+    radial-gradient(circle at 18% 12%, rgba(154, 165, 106, .09), transparent 28%),
+    var(--ink);
+}
+
+.visit {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(242, 235, 221, .18), transparent 29%),
+    linear-gradient(135deg, var(--sage-soft), var(--sage));
+}
+
+/* Unify primary imagery without making it feel filtered. */
+.hero-card,
+.feature-media,
+.signature-media,
+.gallery-grid figure {
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow: var(--shadow-image);
+}
+
+.hero-card img,
+.feature-media img,
+.signature-media img {
+  filter: saturate(.95) contrast(1.045) brightness(.97);
+}
+
+.site-header.scrolled {
+  background: rgba(17, 18, 15, .90);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, .10);
+}
+
+/* Atmosphere section */
+.atmosphere {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 11%, rgba(217, 138, 74, .10), transparent 24%),
+    radial-gradient(circle at 10% 76%, rgba(154, 165, 106, .11), transparent 30%),
+    linear-gradient(180deg, var(--cream-soft), var(--cream-warm));
+}
+
+.atmosphere::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .20;
+  background-image: linear-gradient(rgba(17, 18, 15, .025) 1px, transparent 1px);
+  background-size: 100% 48px;
+}
+
+.atmosphere > .shell {
+  position: relative;
+  z-index: 1;
+}
+
+.atmosphere .section-heading-grid {
+  margin-bottom: 72px;
+  align-items: start;
+}
+
+.atmosphere .section-intro {
+  max-width: 460px;
+  line-height: 1.65;
+}
+
+.atmosphere h2 em {
+  color: #89945d;
+}
+
+.gallery-grid {
+  grid-template-columns: minmax(0, 1.48fr) minmax(300px, .72fr);
+  grid-template-rows: 318px 318px;
+  gap: 20px;
+}
+
+.gallery-grid figure {
+  isolation: isolate;
+  border-radius: 28px;
+  background: var(--ink-warm);
+  border-color: rgba(17, 18, 15, .10);
+  box-shadow: 0 24px 55px rgba(46, 38, 26, .14);
+}
+
+.gallery-grid figure::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+  border-radius: inherit;
+}
+
+.gallery-grid figure::after {
+  z-index: 1;
+  background:
+    linear-gradient(180deg, rgba(8, 9, 7, .02) 34%, rgba(8, 9, 7, .13) 60%, rgba(8, 9, 7, .76) 100%),
+    linear-gradient(90deg, rgba(8, 9, 7, .16), transparent 46%);
+}
+
+.gallery-grid img {
+  transform: scale(1.002);
+  filter: saturate(.96) contrast(1.055) brightness(.96);
+  transition: transform .8s cubic-bezier(.2, .75, .2, 1), filter .5s ease;
+}
+
+.gallery-grid figure:hover img {
+  transform: scale(1.035);
+  filter: saturate(1) contrast(1.06) brightness(.99);
+}
+
+/* Crop tuning for the new generated images. */
+.gallery-main img {
+  object-position: 50% 56%;
+}
+
+.gallery-venue img {
+  object-position: 57% 51%;
+  filter: saturate(.94) contrast(1.055) brightness(.94);
+}
+
+.gallery-aperitivo-detail img {
+  object-position: 50% 49%;
+  filter: saturate(1.02) contrast(1.045) brightness(.97);
+}
+
+.gallery-grid figcaption {
+  left: 22px;
+  right: 22px;
+  bottom: 20px;
+  align-items: end;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .34);
+}
+
+.gallery-grid figcaption span {
+  max-width: 45%;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .13em;
+  opacity: .86;
+}
+
+.gallery-grid figcaption strong {
+  max-width: 58%;
+  font-size: 25px;
+  line-height: .98;
+}
+
+.photo-credit {
+  margin-top: 30px;
+  max-width: 780px;
+  color: rgba(17, 18, 15, .52);
+  line-height: 1.55;
+}
+
+/* Small refinements that help the whole page feel more intentional. */
+.button {
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .08);
+}
+
+.button-sage:hover,
+.button-amber:hover {
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .14);
+}
+
+.rhythm-card {
+  box-shadow: 0 18px 40px rgba(74, 62, 42, .055);
+}
+
+.location-card {
+  box-shadow: 0 24px 56px rgba(43, 50, 24, .12);
+}
+
+@media (max-width: 1050px) {
+  .gallery-grid {
+    grid-template-columns: 1.28fr .72fr;
+    grid-template-rows: 280px 280px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .atmosphere {
+    padding-top: 84px;
+    padding-bottom: 84px;
+  }
+
+  .atmosphere .section-heading-grid {
+    margin-bottom: 42px;
+  }
+
+  .atmosphere .section-intro {
+    max-width: 32ch;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  .gallery-grid figure {
+    border-radius: 22px;
+    box-shadow: 0 18px 38px rgba(46, 38, 26, .13);
+  }
+
+  .gallery-main {
+    aspect-ratio: .92;
+  }
+
+  .gallery-small {
+    aspect-ratio: 1.44;
+  }
+
+  .gallery-main img {
+    object-position: 50% 56%;
+  }
+
+  .gallery-venue img {
+    object-position: 58% 52%;
+  }
+
+  .gallery-aperitivo-detail img {
+    object-position: 50% 47%;
+  }
+
+  .gallery-grid figcaption {
+    left: 17px;
+    right: 17px;
+    bottom: 16px;
+    gap: 12px;
+  }
+
+  .gallery-grid figcaption span {
+    max-width: 42%;
+    font-size: 8px;
+    line-height: 1.3;
+  }
+
+  .gallery-grid figcaption strong {
+    max-width: 58%;
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .photo-credit {
+    margin-top: 22px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 390px) {
+  .gallery-small {
+    aspect-ratio: 1.40;
+  }
+
+  .gallery-grid figcaption {
+    left: 15px;
+    right: 15px;
+    bottom: 14px;
+  }
+
+  .gallery-grid figcaption strong {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-grid img,
+  .gallery-grid figure:hover img {
+    transform: none;
+    transition: none;
+  }
+}
